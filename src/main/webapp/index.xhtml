@@ -8,19 +8,6 @@
     <h:head>
         <title>index.xhtml</title>
 
-        <style type="text/css">
-            .app {
-                margin: 10vh 25vw;
-                border-radius: .5rem;
-                padding: 5%;
-                box-shadow: #ccc 0 0 50px;
-            }
-            .btn input{
-                width: 15vw;
-            }
-
-        </style>
-        
     </h:head>
     <h:body>
 
@@ -29,31 +16,31 @@
 
                 <h:form>
 
-                    <h:outputLabel for="name" value="Enter your name:"/>
+                    <h:outputLabel for="email" value="Enter your email:"/>
 
                     <br/>
 
-                    <h:inputText id="name" value="#{mainBean.name}" required="true"
-                                 validatorMessage="Name should contains 3 single words">
-                        <f:validateRegex pattern="[a-zA-Z0-9]+ [a-zA-Z ]+ [a-zA-Z ]+"/>
+                    <h:inputText id="email" value="#{mainBean.email}" required="true"
+                                 requiredMessage="The field is empty" validatorMessage="The email is not valid">
+                        <f:validateRegex pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
                     </h:inputText>
 
                     <br/>
                     <br/>
 
-                    <h:outputLabel for="age" value="Enter your age:"/>
+                    <h:outputLabel for="phone" value="Enter your phone:"/>
 
                     <br/>
 
-                    <h:inputText id="age" value="#{mainBean.age}" required="true"
-                                 validatorMessage="Age must be between 18 and 60">
-                        <f:validateLongRange minimum="18" maximum="60" for="age"/>
+                    <h:inputText id="phone" value="#{mainBean.phone}" required="true"
+                                 requiredMessage="The field is empty" validatorMessage="The phone is not valid">
+                        <f:validateRegex pattern=""/>
                     </h:inputText>
 
                     <br/>
                     <br/>
 
-                    <div  class="btn">
+                    <div class="btn">
                         <h:commandButton value="submit" action="welcome"/>
                     </div>
 
