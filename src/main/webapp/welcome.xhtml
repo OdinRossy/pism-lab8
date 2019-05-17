@@ -9,12 +9,16 @@
     </h:head>
     <h:body bgcolor="white">
         <h2>Результат</h2>
-        <h:outputLabel for="name" value="Your name: "/>
+        <h:outputLabel for="symbol" value="Your symbol: "/>
 
-        <h:outputText id="name" value="#{mainBean.name}"/><br/>
+        <h:outputText id="symbol" value="#{mainBean.symbols}"/><br/>
 
-        <h:outputLabel for="age" value="Your age: "/>
+        <h:outputLabel for="text" value="Your text: "/>
 
-        <h:outputText id="age" value="#{mainBean.age}"/>
+        <h:outputText id="text" value="#{mainBean.text}"/>
+
+        <h:outputLabel for="count" value="Symbol repeats: "/>
+
+        <h:outputText id="count" value="#{mainBean.count}"/>
     </h:body>
 </html>

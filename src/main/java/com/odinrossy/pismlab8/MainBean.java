@@ -10,23 +10,40 @@ public class MainBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String name;
+    private String symbols;
 
-    private int age;
+    private String text;
 
-    public int getAge() {
-        return age;
+    private int count;
+
+    public String getSymbols() {
+        return symbols;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setSymbols(String symbols) {
+        this.symbols = symbols;
     }
 
-    public String getName() {
-        return name;
+    public String getText() {
+        return text;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public int getCount() {
+        int counter = 0;
+        String[] stringsArr = text.split("");
+        for (String s : stringsArr) {
+            if (s.contains(symbols)) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }
