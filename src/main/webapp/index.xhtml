@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <title>index.xhtml</title>
+
+        <style type="text/css">
+            .app {
+                margin: 10vh 25vw;
+                border-radius: .5rem;
+                padding: 5%;
+                box-shadow: #ccc 0 0 50px;
+            }
+            .btn input{
+                width: 15vw;
+            }
+
+        </style>
+        
+    </h:head>
+    <h:body>
+
+        <div class="app">
+            <f:view>
+
+                <h:form>
+
+                    <h:outputLabel for="name" value="Enter your name:"/>
+
+                    <br/>
+
+                    <h:inputText id="name" value="#{mainBean.name}" required="true"
+                                 validatorMessage="Name should contains 3 single words">
+                        <f:validateRegex pattern="[a-zA-Z0-9]+ [a-zA-Z ]+ [a-zA-Z ]+"/>
+                    </h:inputText>
+
+                    <br/>
+                    <br/>
+
+                    <h:outputLabel for="age" value="Enter your age:"/>
+
+                    <br/>
+
+                    <h:inputText id="age" value="#{mainBean.age}" required="true"
+                                 validatorMessage="Age must be between 18 and 60">
+                        <f:validateLongRange minimum="18" maximum="60" for="age"/>
+                    </h:inputText>
+
+                    <br/>
+                    <br/>
+
+                    <div  class="btn">
+                        <h:commandButton value="submit" action="welcome"/>
+                    </div>
+
+
+                    <h:messages/>
+
+                </h:form>
+
+            </f:view>
+        </div>
+
+    </h:body>
+</html>
